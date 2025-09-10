@@ -148,7 +148,7 @@ const EventsView = ({ dayData, dayInfo }) => {
                 sx={{ 
                   opacity: 0.7, 
                   mb: 0.5,
-                  fontSize: '0.8rem',
+                  fontSize: '1rem',
                   fontWeight: 500,
                   letterSpacing: '0.5px',
                   color: '#8B5CF6'
@@ -160,7 +160,7 @@ const EventsView = ({ dayData, dayInfo }) => {
                 variant="h6" 
                 sx={{ 
                   fontWeight: 600, 
-                  fontSize: '1.1rem',
+                  fontSize: '1.5rem',
                   lineHeight: 1.2,
                   color: '#2d3436'
                 }}
