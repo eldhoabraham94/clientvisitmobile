@@ -113,11 +113,16 @@ function App() {
             sx={{ 
               flexGrow: 1, 
               textAlign: 'center',
-              fontWeight: 600,
-              color: 'text.primary'
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: '1.3rem',
+              letterSpacing: '0.5px',
             }}
           >
-            Day Timeline
+            5-Day Visit Timeline
           </Typography>
           <IconButton
             size="large"

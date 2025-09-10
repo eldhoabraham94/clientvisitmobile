@@ -15,33 +15,6 @@ import TimelineDay5Icon from './TimelineDay5Icon';
 const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
   return (
     <Box sx={{ mb: 4 }}>
-      {/* Enhanced Timeline Header */}
-      <Box sx={{ mb: 2, textAlign: 'center' }}>
-        <Typography 
-          variant="h5" 
-          sx={{ 
-            fontWeight: 700,
-            background: 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            mb: 0.5
-          }}
-        >
-          5-Day Visit Timeline
-        </Typography>
-        <Typography 
-          variant="body2" 
-          sx={{ 
-            color: 'text.secondary',
-            fontSize: '0.9rem',
-            opacity: 0.8
-          }}
-        >
-          Select a day to view detailed events
-        </Typography>
-      </Box>
-
       {/* Enhanced Timeline Container */}
       <Box
         sx={{
