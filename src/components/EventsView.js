@@ -15,6 +15,11 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import TruckIcon from './TruckIcon';
+import AirplaneIcon from './AirplaneIcon';
+import Day2Icon from './Day2Icon';
+import Day3Icon from './Day3Icon';
+import Day4Icon from './Day4Icon';
+import Day5Icon from './Day5Icon';
 
 const EventsView = ({ dayData, dayInfo }) => {
   if (!dayData) return null;
@@ -62,11 +67,12 @@ const EventsView = ({ dayData, dayInfo }) => {
         <Card
           sx={{
             mb: 3,
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            color: 'white',
+            background: '#ffffff',
+            color: '#2d3436',
             position: 'relative',
             overflow: 'hidden',
             borderRadius: 3,
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
           }}
         >
           <CardContent sx={{ py: 2, px: 2.5, display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -74,28 +80,39 @@ const EventsView = ({ dayData, dayInfo }) => {
             <Box
               sx={{
                 position: 'relative',
-                minWidth: 80,
-                height: 50,
+                minWidth: 120,
+                height: 70,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
-              {/* Truck SVG/Illustration */}
+              {/* Truck/Airplane Illustration */}
               <Box
                 sx={{
-                  width: 70,
-                  height: 40,
+                  width: 110,
+                  height: 60,
                   borderRadius: 2,
-                  bgcolor: 'rgba(255,255,255,0.15)',
+                  bgcolor: 'rgba(34, 189, 242, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.8rem',
                   position: 'relative',
                 }}
               >
-                <TruckIcon width={35} height={26} color="white" />
+                {dayInfo.id === 0 ? (
+                  <AirplaneIcon width={85} height={32} />
+                ) : dayInfo.id === 1 ? (
+                  <Day2Icon width={110} height={55} />
+                ) : dayInfo.id === 2 ? (
+                  <Day3Icon width={104} height={47} />
+                ) : dayInfo.id === 3 ? (
+                  <Day4Icon width={103} height={47} />
+                ) : dayInfo.id === 4 ? (
+                  <Day5Icon width={124} height={48} />
+                ) : (
+                  <TruckIcon width={60} height={45} color="#22BDF2" />
+                )}
               </Box>
               
               {/* Location Pin */}
@@ -129,11 +146,12 @@ const EventsView = ({ dayData, dayInfo }) => {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  opacity: 0.9, 
+                  opacity: 0.7, 
                   mb: 0.5,
                   fontSize: '0.8rem',
                   fontWeight: 500,
-                  letterSpacing: '0.5px'
+                  letterSpacing: '0.5px',
+                  color: '#8B5CF6'
                 }}
               >
                 DAY {dayInfo.id + 1}
@@ -143,7 +161,8 @@ const EventsView = ({ dayData, dayInfo }) => {
                 sx={{ 
                   fontWeight: 600, 
                   fontSize: '1.1rem',
-                  lineHeight: 1.2
+                  lineHeight: 1.2,
+                  color: '#2d3436'
                 }}
               >
                 {dayData.title}
