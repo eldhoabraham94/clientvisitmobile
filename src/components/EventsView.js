@@ -276,8 +276,8 @@ const EventsView = ({ dayData, dayInfo }) => {
                       
                       {/* Moving Truck Icon - Tires touching the track */}
                       <motion.div
-                        initial={{ left: '0%' }}
-                        animate={{ left: `${Math.max(0, event.progress - 3)}%` }}
+                        initial={{ left: '3%' }}
+                        animate={{ left: `${Math.max(3, event.progress - 3)}%` }}
                         transition={{ 
                           duration: 2.0, 
                           delay: index * 0.1 + 0.8,

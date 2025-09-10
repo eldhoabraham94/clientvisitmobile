@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "5-Day Client Visit Timeline",
+    "description": "Complete timeline data for client visit events",
+    "version": "1.0",
+    "lastUpdated": "2025-09-11"
+  },
+  "timeline": {
+    "days": [
+      { 
+        "id": 0, 
+        "date": "7 Sep", 
+        "day": "Sun", 
+        "icon": "airplane" 
+      },
+      { 
+        "id": 1, 
+        "date": "8 Sep", 
+        "day": "Mon", 
+        "icon": "person" 
+      },
+      { 
+        "id": 2, 
+        "date": "9 Sep", 
+        "day": "Tue", 
+        "icon": "truck" 
+      },
+      { 
+        "id": 3, 
+        "date": "10 Sep", 
+        "day": "Wed", 
+        "icon": "building" 
+      },
+      { 
+        "id": 4, 
+        "date": "11 Sep", 
+        "day": "Thu", 
+        "icon": "airplane" 
+      }
+    ],
+    "events": {
+      "0": {
+        "title": "Arrival Day",
+        "subtitle": "Welcome & Setup",
+        "events": [
+          {
+            "id": 1,
+            "title": "Airport Pickup",
+            "time": "09:00 am - 10:00 am",
+            "location": "Airport Terminal 1",
+            "status": "Completed",
+            "attendees": 2,
+            "icon": "✈️",
+            "startTime": "09:00",
+            "endTime": "10:00",
+            "duration": 60,
+            "progress": 100
+          },
+          {
+            "id": 2,
+            "title": "Hotel Check-in",
+            "time": "11:00 am - 12:00 pm",
+            "location": "Hotel Lobby",
+            "status": "Completed",
+            "attendees": 2,
+            "icon": "🏨",
+            "startTime": "11:00",
+            "endTime": "12:00",
+            "duration": 60,
+            "progress": 100
+          },
+          {
+            "id": 3,
+            "title": "Welcome Lunch",
+            "time": "12:30 pm - 01:30 pm",
+            "location": "Hotel Restaurant",
+            "status": "Completed",
+            "attendees": 5,
+            "icon": "🍽️",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "duration": 60,
+            "progress": 100
+          },
+          {
+            "id": 4,
+            "title": "City Orientation Tour",
+            "time": "02:00 pm - 04:00 pm",
+            "location": "Downtown Area",
+            "status": "Completed",
+            "attendees": 8,
+            "icon": "🗺️",
+            "startTime": "14:00",
+            "endTime": "16:00",
+            "duration": 120,
+            "progress": 100
+          },
+          {
+            "id": 5,
+            "title": "Team Dinner",
+            "time": "07:00 pm - 09:00 pm",
+            "location": "Local Restaurant",
+            "status": "Completed",
+            "attendees": 12,
+            "icon": "🍷",
+            "startTime": "19:00",
+            "endTime": "21:00",
+            "duration": 120,
+            "progress": 100
+          }
+        ]
+      },
+      "1": {
+        "title": "Customer Sessions",
+        "subtitle": "Client Meetings Day",
+        "events": [
+          {
+            "id": 1,
+            "title": "Morning Coffee & Registration",
+            "time": "08:30 am - 09:00 am",
+            "location": "Conference Lobby",
+            "status": "Completed",
+            "attendees": 15,
+            "icon": "☕",
+            "startTime": "08:30",
+            "endTime": "09:00",
+            "duration": 30,
+            "progress": 100
+          },
+          {
+            "id": 2,
+            "title": "Keynote & Strategy",
+            "time": "09:00 am - 10:00 am",
+            "location": "Meeting Room 1",
+            "status": "Progress",
+            "attendees": 10,
+            "icon": "🚚",
+            "startTime": "09:00",
+            "endTime": "10:00",
+            "duration": 60,
+            "progress": 75
+          },
+          {
+            "id": 3,
+            "title": "Technology Showcase",
+            "time": "10:00 am - 11:30 am",
+            "location": "Meeting Room 1",
+            "status": "Progress",
+            "attendees": 12,
+            "icon": "💻",
+            "startTime": "10:00",
+            "endTime": "11:30",
+            "duration": 90,
+            "progress": 40
+          },
+          {
+            "id": 4,
+            "title": "Coffee Break",
+            "time": "11:30 am - 12:00 pm",
+            "location": "Networking Area",
+            "status": "Scheduled",
+            "attendees": 12,
+            "icon": "☕",
+            "startTime": "11:30",
+            "endTime": "12:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 5,
+            "title": "Panel Discussion",
+            "time": "12:00 pm - 01:00 pm",
+            "location": "Meeting Room 1",
+            "status": "Scheduled",
+            "attendees": 12,
+            "icon": "💼",
+            "startTime": "12:00",
+            "endTime": "13:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 6,
+            "title": "Business Lunch",
+            "time": "01:00 pm - 02:00 pm",
+            "location": "Executive Dining",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🍽️",
+            "startTime": "13:00",
+            "endTime": "14:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 7,
+            "title": "Product Demo Session",
+            "time": "02:00 pm - 03:30 pm",
+            "location": "Demo Lab",
+            "status": "Scheduled",
+            "attendees": 10,
+            "icon": "🔧",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "duration": 90,
+            "progress": 0
+          }
+        ]
+      },
+      "2": {
+        "title": "Workshop Day",
+        "subtitle": "Hands-on Training",
+        "events": [
+          {
+            "id": 1,
+            "title": "Workshop Setup",
+            "time": "08:30 am - 09:00 am",
+            "location": "Training Room A",
+            "status": "Scheduled",
+            "attendees": 5,
+            "icon": "🔧",
+            "startTime": "08:30",
+            "endTime": "09:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 2,
+            "title": "Technical Workshop - Part 1",
+            "time": "09:00 am - 10:30 am",
+            "location": "Training Room A",
+            "status": "Scheduled",
+            "attendees": 15,
+            "icon": "⚙️",
+            "startTime": "09:00",
+            "endTime": "10:30",
+            "duration": 90,
+            "progress": 0
+          },
+          {
+            "id": 3,
+            "title": "Coffee Break",
+            "time": "10:30 am - 11:00 am",
+            "location": "Break Area",
+            "status": "Scheduled",
+            "attendees": 15,
+            "icon": "☕",
+            "startTime": "10:30",
+            "endTime": "11:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 4,
+            "title": "Technical Workshop - Part 2",
+            "time": "11:00 am - 12:30 pm",
+            "location": "Training Room A",
+            "status": "Scheduled",
+            "attendees": 15,
+            "icon": "💻",
+            "startTime": "11:00",
+            "endTime": "12:30",
+            "duration": 90,
+            "progress": 0
+          },
+          {
+            "id": 5,
+            "title": "Lunch & Networking",
+            "time": "12:30 pm - 01:30 pm",
+            "location": "Cafeteria",
+            "status": "Scheduled",
+            "attendees": 20,
+            "icon": "🍽️",
+            "startTime": "12:30",
+            "endTime": "13:30",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 6,
+            "title": "Hands-on Lab Session",
+            "time": "01:30 pm - 03:00 pm",
+            "location": "Computer Lab",
+            "status": "Scheduled",
+            "attendees": 12,
+            "icon": "🖥️",
+            "startTime": "13:30",
+            "endTime": "15:00",
+            "duration": 90,
+            "progress": 0
+          },
+          {
+            "id": 7,
+            "title": "Q&A and Wrap-up",
+            "time": "03:00 pm - 03:30 pm",
+            "location": "Training Room A",
+            "status": "Scheduled",
+            "attendees": 15,
+            "icon": "❓",
+            "startTime": "15:00",
+            "endTime": "15:30",
+            "duration": 30,
+            "progress": 0
+          }
+        ]
+      },
+      "3": {
+        "title": "Site Visits",
+        "subtitle": "Facility Tours",
+        "events": [
+          {
+            "id": 1,
+            "title": "Transportation to Factory",
+            "time": "08:30 am - 09:00 am",
+            "location": "Hotel Pickup",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🚌",
+            "startTime": "08:30",
+            "endTime": "09:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 2,
+            "title": "Safety Briefing",
+            "time": "09:00 am - 09:30 am",
+            "location": "Visitor Center",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🦺",
+            "startTime": "09:00",
+            "endTime": "09:30",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 3,
+            "title": "Manufacturing Tour",
+            "time": "09:30 am - 11:30 am",
+            "location": "Production Floor",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🏭",
+            "startTime": "09:30",
+            "endTime": "11:30",
+            "duration": 120,
+            "progress": 0
+          },
+          {
+            "id": 4,
+            "title": "Coffee Break",
+            "time": "11:30 am - 12:00 pm",
+            "location": "Visitor Lounge",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "☕",
+            "startTime": "11:30",
+            "endTime": "12:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 5,
+            "title": "Quality Control Lab Visit",
+            "time": "12:00 pm - 01:00 pm",
+            "location": "QC Laboratory",
+            "status": "Scheduled",
+            "attendees": 6,
+            "icon": "🔬",
+            "startTime": "12:00",
+            "endTime": "13:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 6,
+            "title": "Working Lunch",
+            "time": "01:00 pm - 02:00 pm",
+            "location": "Executive Dining",
+            "status": "Scheduled",
+            "attendees": 10,
+            "icon": "🍽️",
+            "startTime": "13:00",
+            "endTime": "14:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 7,
+            "title": "Q&A Session",
+            "time": "02:00 pm - 03:00 pm",
+            "location": "Conference Room",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "❓",
+            "startTime": "14:00",
+            "endTime": "15:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 8,
+            "title": "Return to Hotel",
+            "time": "03:00 pm - 03:30 pm",
+            "location": "Factory to Hotel",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🚌",
+            "startTime": "15:00",
+            "endTime": "15:30",
+            "duration": 30,
+            "progress": 0
+          }
+        ]
+      },
+      "4": {
+        "title": "Departure",
+        "subtitle": "Wrap-up & Goodbye",
+        "events": [
+          {
+            "id": 1,
+            "title": "Breakfast Meeting",
+            "time": "08:00 am - 09:00 am",
+            "location": "Hotel Restaurant",
+            "status": "Scheduled",
+            "attendees": 8,
+            "icon": "🍳",
+            "startTime": "08:00",
+            "endTime": "09:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 2,
+            "title": "Final Presentation",
+            "time": "09:00 am - 10:30 am",
+            "location": "Main Hall",
+            "status": "Scheduled",
+            "attendees": 25,
+            "icon": "📊",
+            "startTime": "09:00",
+            "endTime": "10:30",
+            "duration": 90,
+            "progress": 0
+          },
+          {
+            "id": 3,
+            "title": "Closing Ceremony",
+            "time": "10:30 am - 11:00 am",
+            "location": "Main Hall",
+            "status": "Scheduled",
+            "attendees": 30,
+            "icon": "🎉",
+            "startTime": "10:30",
+            "endTime": "11:00",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 4,
+            "title": "Gift Exchange",
+            "time": "11:00 am - 11:30 am",
+            "location": "Main Hall",
+            "status": "Scheduled",
+            "attendees": 15,
+            "icon": "🎁",
+            "startTime": "11:00",
+            "endTime": "11:30",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 5,
+            "title": "Farewell Lunch",
+            "time": "12:00 pm - 01:00 pm",
+            "location": "Private Dining",
+            "status": "Scheduled",
+            "attendees": 12,
+            "icon": "🍽️",
+            "startTime": "12:00",
+            "endTime": "13:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 6,
+            "title": "Hotel Checkout",
+            "time": "01:00 pm - 01:30 pm",
+            "location": "Hotel Lobby",
+            "status": "Scheduled",
+            "attendees": 2,
+            "icon": "🏨",
+            "startTime": "13:00",
+            "endTime": "13:30",
+            "duration": 30,
+            "progress": 0
+          },
+          {
+            "id": 7,
+            "title": "Airport Transfer",
+            "time": "02:00 pm - 03:00 pm",
+            "location": "Hotel to Airport",
+            "status": "Scheduled",
+            "attendees": 2,
+            "icon": "🚖",
+            "startTime": "14:00",
+            "endTime": "15:00",
+            "duration": 60,
+            "progress": 0
+          },
+          {
+            "id": 8,
+            "title": "Flight Departure",
+            "time": "05:00 pm - 06:00 pm",
+            "location": "Airport Terminal",
+            "status": "Scheduled",
+            "attendees": 2,
+            "icon": "✈️",
+            "startTime": "17:00",
+            "endTime": "18:00",
+            "duration": 60,
+            "progress": 0
+          }
+        ]
+      }
+    }
+  }
+}
