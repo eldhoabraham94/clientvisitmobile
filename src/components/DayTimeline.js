@@ -7,6 +7,10 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import TruckIcon from './TruckIcon';
+import TimelineDay1Icon from './TimelineDay1Icon';
+import TimelineDay2Icon from './TimelineDay2Icon';
+import TimelineDay4Icon from './TimelineDay4Icon';
+import TimelineDay5Icon from './TimelineDay5Icon';
 
 const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
   return (
@@ -123,10 +127,30 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                           delay: 0.1 
                         }}
                       >
-                        <TruckIcon width={24} height={18} color="white" />
+                        {day.id === 0 ? (
+                          <TimelineDay1Icon width={48} height={48} color="white" />
+                        ) : day.id === 1 ? (
+                          <TimelineDay2Icon width={48} height={48} color="white" />
+                        ) : day.id === 3 ? (
+                          <TimelineDay4Icon width={48} height={47} color="white" />
+                        ) : day.id === 4 ? (
+                          <TimelineDay5Icon width={48} height={48} color="white" />
+                        ) : (
+                          <TruckIcon width={24} height={18} color="white" />
+                        )}
                       </motion.div>
                     ) : (
-                      <TruckIcon width={24} height={18} color="#6c757d" />
+                      day.id === 0 ? (
+                        <TimelineDay1Icon width={48} height={48} color="#6F25D2" />
+                      ) : day.id === 1 ? (
+                        <TimelineDay2Icon width={48} height={48} color="#6F25D2" />
+                      ) : day.id === 3 ? (
+                        <TimelineDay4Icon width={48} height={47} color="#6F25D2" />
+                      ) : day.id === 4 ? (
+                        <TimelineDay5Icon width={48} height={48} color="#6F25D2" />
+                      ) : (
+                        <TruckIcon width={24} height={18} color="#6c757d" />
+                      )
                     )}
                   </Avatar>
                   
