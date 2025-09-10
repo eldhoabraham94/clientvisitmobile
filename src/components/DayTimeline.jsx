@@ -13,21 +13,32 @@ import TimelineDay4Icon from './TimelineDay4Icon.jsx';
 import TimelineDay5Icon from './TimelineDay5Icon.jsx';
 
 const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
+  // Helper function to get responsive icon size
+  const getIconSize = (isLarge = false) => {
+    return {
+      xs: isLarge ? 32 : 24,
+      sm: isLarge ? 40 : 30,
+      md: isLarge ? 48 : 36
+    };
+  };
+
   return (
     <Box sx={{ mb: 4 }}>
-      {/* Enhanced Timeline Container */}
+      {/* Responsive Timeline Container */}
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          py: 4,
-          px: 3,
+          py: { xs: 2, sm: 3, md: 4 },
+          px: { xs: 1.5, sm: 2, md: 3 },
           background: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 30%, #e3f2fd 100%)',
-          borderRadius: 4,
+          borderRadius: { xs: 2, sm: 3, md: 4 },
           boxShadow: '0 8px 32px rgba(108, 92, 231, 0.12), 0 4px 16px rgba(0,0,0,0.08)',
           position: 'relative',
           overflow: 'hidden',
+          gap: { xs: 0.5, sm: 1, md: 0 },
+          flexWrap: { xs: 'nowrap', sm: 'nowrap' },
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -35,7 +46,7 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            borderRadius: 4,
+            borderRadius: { xs: 2, sm: 3, md: 4 },
             padding: 2,
             background: 'linear-gradient(145deg, rgba(108, 92, 231, 0.15), rgba(253, 121, 168, 0.15), rgba(163, 155, 254, 0.15))',
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
@@ -46,8 +57,8 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
             content: '""',
             position: 'absolute',
             top: '50%',
-            left: '10%',
-            right: '10%',
+            left: { xs: '5%', sm: '8%', md: '10%' },
+            right: { xs: '5%', sm: '8%', md: '10%' },
             height: '3px',
             background: 'linear-gradient(90deg, rgba(108, 92, 231, 0.3) 0%, rgba(163, 155, 254, 0.5) 50%, rgba(253, 121, 168, 0.3) 100%)',
             borderRadius: '2px',
@@ -67,17 +78,18 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
             <ButtonBase
               onClick={() => onDaySelect(day.id)}
               sx={{
-                borderRadius: 5,
-                p: 1.5,
+                borderRadius: { xs: 3, sm: 4, md: 5 },
+                p: { xs: 0.5, sm: 1, md: 1.5 },
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
+                minWidth: { xs: 'auto', sm: 'auto' },
                 '&:hover': {
                   '& .day-container': {
-                    transform: 'translateY(-3px)',
+                    transform: { xs: 'translateY(-1px)', sm: 'translateY(-2px)', md: 'translateY(-3px)' },
                   },
                   '& .avatar-glow': {
                     opacity: selectedDay === day.id ? 1 : 0.6,
-                    transform: 'scale(1.1)',
+                    transform: { xs: 'scale(1.05)', sm: 'scale(1.08)', md: 'scale(1.1)' },
                   }
                 }
               }}
@@ -88,7 +100,7 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: 1.5,
+                  gap: { xs: 0.5, sm: 1, md: 1.5 },
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
@@ -97,11 +109,13 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                   sx={{
                     color: selectedDay === day.id ? 'primary.main' : 'text.secondary',
                     fontWeight: selectedDay === day.id ? 800 : 600,
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.7rem', sm: '0.75rem', md: '0.8rem' },
                     letterSpacing: '1px',
                     transition: 'all 0.3s ease',
                     textTransform: 'uppercase',
                     textShadow: selectedDay === day.id ? '0 2px 4px rgba(108, 92, 231, 0.3)' : 'none',
+                    textAlign: 'center',
+                    lineHeight: 1,
                   }}
                 >
                   {day.date}
@@ -113,13 +127,13 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                     className="avatar-glow"
                     sx={{
                       position: 'absolute',
-                      inset: -6,
+                      inset: { xs: -4, sm: -5, md: -6 },
                       borderRadius: '50%',
                       background: selectedDay === day.id 
                         ? 'linear-gradient(45deg, #6c5ce7, #a29bfe, #fd79a8)'
                         : 'linear-gradient(45deg, rgba(108, 92, 231, 0.3), rgba(162, 155, 254, 0.3))',
                       opacity: selectedDay === day.id ? 0.8 : 0,
-                      filter: 'blur(12px)',
+                      filter: { xs: 'blur(8px)', sm: 'blur(10px)', md: 'blur(12px)' },
                       transition: 'all 0.4s ease',
                       zIndex: -1,
                     }}
@@ -127,15 +141,25 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                   
                   <Avatar
                     sx={{
-                      width: 72,
-                      height: 72,
+                      width: { xs: 48, sm: 56, md: 72 },
+                      height: { xs: 48, sm: 56, md: 72 },
                       bgcolor: selectedDay === day.id ? 'primary.main' : 'background.paper',
-                      border: selectedDay === day.id ? '3px solid rgba(255,255,255,0.8)' : '3px solid rgba(108, 92, 231, 0.25)',
+                      border: selectedDay === day.id 
+                        ? { xs: '2px solid rgba(255,255,255,0.8)', sm: '2.5px solid rgba(255,255,255,0.8)', md: '3px solid rgba(255,255,255,0.8)' }
+                        : { xs: '2px solid rgba(108, 92, 231, 0.25)', sm: '2.5px solid rgba(108, 92, 231, 0.25)', md: '3px solid rgba(108, 92, 231, 0.25)' },
                       transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                      fontSize: '1.8rem',
+                      fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.8rem' },
                       boxShadow: selectedDay === day.id 
-                        ? '0 12px 40px rgba(108, 92, 231, 0.4), 0 6px 20px rgba(108, 92, 231, 0.3), inset 0 2px 0 rgba(255,255,255,0.4)' 
-                        : '0 6px 20px rgba(0,0,0,0.12), 0 3px 12px rgba(0,0,0,0.08), inset 0 2px 0 rgba(255,255,255,0.8)',
+                        ? { 
+                            xs: '0 6px 20px rgba(108, 92, 231, 0.4), 0 3px 10px rgba(108, 92, 231, 0.3), inset 0 1px 0 rgba(255,255,255,0.4)',
+                            sm: '0 8px 30px rgba(108, 92, 231, 0.4), 0 4px 15px rgba(108, 92, 231, 0.3), inset 0 1.5px 0 rgba(255,255,255,0.4)',
+                            md: '0 12px 40px rgba(108, 92, 231, 0.4), 0 6px 20px rgba(108, 92, 231, 0.3), inset 0 2px 0 rgba(255,255,255,0.4)'
+                          }
+                        : { 
+                            xs: '0 3px 10px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8)',
+                            sm: '0 4px 15px rgba(0,0,0,0.12), 0 2px 9px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.8)',
+                            md: '0 6px 20px rgba(0,0,0,0.12), 0 3px 12px rgba(0,0,0,0.08), inset 0 2px 0 rgba(255,255,255,0.8)'
+                          },
                       background: selectedDay === day.id 
                         ? 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #667eea 100%)'
                         : 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e3f2fd 100%)',
@@ -200,18 +224,22 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                       <Box
                         sx={{
                           position: 'absolute',
-                          bottom: -8,
+                          bottom: { xs: -6, sm: -7, md: -8 },
                           left: '50%',
                           transform: 'translateX(-50%)',
-                          width: 12,
-                          height: 12,
+                          width: { xs: 8, sm: 10, md: 12 },
+                          height: { xs: 8, sm: 10, md: 12 },
                           borderRadius: '50%',
                           background: 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%)',
-                          boxShadow: '0 4px 12px rgba(108, 92, 231, 0.6), 0 2px 6px rgba(108, 92, 231, 0.4)',
+                          boxShadow: { 
+                            xs: '0 2px 6px rgba(108, 92, 231, 0.6), 0 1px 3px rgba(108, 92, 231, 0.4)',
+                            sm: '0 3px 9px rgba(108, 92, 231, 0.6), 0 1.5px 4.5px rgba(108, 92, 231, 0.4)',
+                            md: '0 4px 12px rgba(108, 92, 231, 0.6), 0 2px 6px rgba(108, 92, 231, 0.4)'
+                          },
                           '&::before': {
                             content: '""',
                             position: 'absolute',
-                            inset: 2,
+                            inset: { xs: 1.5, sm: 2, md: 2 },
                             borderRadius: '50%',
                             background: 'rgba(255,255,255,0.8)',
                           }
@@ -226,11 +254,13 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                   sx={{
                     color: selectedDay === day.id ? 'primary.main' : 'text.secondary',
                     fontWeight: selectedDay === day.id ? 800 : 600,
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.7rem', sm: '0.75rem', md: '0.8rem' },
                     letterSpacing: '1px',
                     transition: 'all 0.3s ease',
                     textTransform: 'uppercase',
                     textShadow: selectedDay === day.id ? '0 2px 4px rgba(108, 92, 231, 0.3)' : 'none',
+                    textAlign: 'center',
+                    lineHeight: 1,
                   }}
                 >
                   {day.day}
