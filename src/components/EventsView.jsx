@@ -14,12 +14,12 @@ import {
   MoreHoriz as MoreIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import TruckIcon from './TruckIcon';
-import AirplaneIcon from './AirplaneIcon';
-import Day2Icon from './Day2Icon';
-import Day3Icon from './Day3Icon';
-import Day4Icon from './Day4Icon';
-import Day5Icon from './Day5Icon';
+import TruckIcon from './TruckIcon.jsx';
+import AirplaneIcon from './AirplaneIcon.jsx';
+import Day2Icon from './Day2Icon.jsx';
+import Day3Icon from './Day3Icon.jsx';
+import Day4Icon from './Day4Icon.jsx';
+import Day5Icon from './Day5Icon.jsx';
 
 const EventsView = ({ dayData, dayInfo }) => {
   if (!dayData) return null;

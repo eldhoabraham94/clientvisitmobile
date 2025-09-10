@@ -6,11 +6,11 @@ import {
   ButtonBase,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import TruckIcon from './TruckIcon';
-import TimelineDay1Icon from './TimelineDay1Icon';
-import TimelineDay2Icon from './TimelineDay2Icon';
-import TimelineDay4Icon from './TimelineDay4Icon';
-import TimelineDay5Icon from './TimelineDay5Icon';
+import TruckIcon from './TruckIcon.jsx';
+import TimelineDay1Icon from './TimelineDay1Icon.jsx';
+import TimelineDay2Icon from './TimelineDay2Icon.jsx';
+import TimelineDay4Icon from './TimelineDay4Icon.jsx';
+import TimelineDay5Icon from './TimelineDay5Icon.jsx';
 
 const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
   return (

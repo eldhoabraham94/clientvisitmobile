@@ -14,9 +14,9 @@ import {
   MoreVert as MoreVertIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import DayTimeline from './components/DayTimeline';
-import EventsView from './components/EventsView';
-import useTimelineData from './hooks/useTimelineData';
+import DayTimeline from './components/DayTimeline.jsx';
+import EventsView from './components/EventsView.jsx';
+import useTimelineData from './hooks/useTimelineData.js';
 
 function App() {
   const [selectedDay, setSelectedDay] = useState(1); // Day 2 is selected by default
