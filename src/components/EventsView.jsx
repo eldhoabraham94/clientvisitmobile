@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Card,
@@ -20,9 +20,23 @@ import Day2Icon from './Day2Icon.jsx';
 import Day3Icon from './Day3Icon.jsx';
 import Day4Icon from './Day4Icon.jsx';
 import Day5Icon from './Day5Icon.jsx';
+import SessionDetailPopup from './SessionDetailPopup.jsx';
 
 const EventsView = ({ dayData, dayInfo }) => {
+  const [selectedSession, setSelectedSession] = useState(null);
+  const [popupOpen, setPopupOpen] = useState(false);
+
   if (!dayData) return null;
+
+  const handleSessionClick = (event) => {
+    setSelectedSession(event);
+    setPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupOpen(false);
+    setSelectedSession(null);
+  };
 
   // Function to calculate progress based on current time
   const calculateTimeBasedProgress = (event) => {
@@ -225,6 +239,7 @@ const EventsView = ({ dayData, dayInfo }) => {
             }}
           >
             <Card
+              onClick={() => handleSessionClick(event)}
               sx={{
                 cursor: 'pointer',
                 background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
@@ -234,6 +249,10 @@ const EventsView = ({ dayData, dayInfo }) => {
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
                 overflow: 'hidden',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.1)',
+                },
                 '&::before': {
                   content: '""',
                   position: 'absolute',
@@ -402,7 +421,7 @@ const EventsView = ({ dayData, dayInfo }) => {
                         }}
                         style={{
                           position: 'absolute',
-                          top: '-20px',
+                          top: '-24px',
                           transform: 'translateX(-50%)',
                           zIndex: 3,
                           pointerEvents: 'none',
@@ -476,6 +495,14 @@ const EventsView = ({ dayData, dayInfo }) => {
         );
         })}
       </Box>
+
+      {/* Session Detail Popup */}
+      <SessionDetailPopup
+        open={popupOpen}
+        onClose={handleClosePopup}
+        sessionData={selectedSession}
+        dayInfo={dayInfo}
+      />
     </Box>
   );
 };
