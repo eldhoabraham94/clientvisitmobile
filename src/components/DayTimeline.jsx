@@ -33,8 +33,16 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
           py: { xs: 2, sm: 3, md: 4 },
           px: { xs: 1.5, sm: 2, md: 3 },
           background: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 30%, #e3f2fd 100%)',
-          borderRadius: { xs: 2, sm: 3, md: 4 },
-          boxShadow: '0 8px 32px rgba(108, 92, 231, 0.12), 0 4px 16px rgba(0,0,0,0.08)',
+          borderRadius: { xs: 3, sm: 4, md: 5 },
+          border: '3px solid transparent',
+          backgroundImage: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 30%, #e3f2fd 100%), linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8)',
+          backgroundOrigin: 'border-box',
+          backgroundClip: 'content-box, border-box',
+          boxShadow: {
+            xs: '0 12px 40px rgba(108, 92, 231, 0.2), 0 8px 24px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.8)',
+            sm: '0 16px 48px rgba(108, 92, 231, 0.25), 0 10px 30px rgba(0,0,0,0.12), inset 0 3px 0 rgba(255,255,255,0.9)',
+            md: '0 20px 56px rgba(108, 92, 231, 0.3), 0 12px 36px rgba(0,0,0,0.15), inset 0 4px 0 rgba(255,255,255,1)'
+          },
           position: 'relative',
           overflow: 'hidden',
           gap: { xs: 0.5, sm: 1, md: 0 },
@@ -46,12 +54,13 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            borderRadius: { xs: 2, sm: 3, md: 4 },
-            padding: 2,
-            background: 'linear-gradient(145deg, rgba(108, 92, 231, 0.15), rgba(253, 121, 168, 0.15), rgba(163, 155, 254, 0.15))',
+            borderRadius: { xs: 3, sm: 4, md: 5 },
+            padding: 3,
+            background: 'linear-gradient(145deg, rgba(108, 92, 231, 0.2), rgba(253, 121, 168, 0.2), rgba(163, 155, 254, 0.2))',
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'exclude',
             maskComposite: 'exclude',
+            opacity: 0.8,
           },
           '&::after': {
             content: '""',
@@ -59,20 +68,30 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
             top: '50%',
             left: { xs: '5%', sm: '8%', md: '10%' },
             right: { xs: '5%', sm: '8%', md: '10%' },
-            height: '3px',
-            background: 'linear-gradient(90deg, rgba(108, 92, 231, 0.3) 0%, rgba(163, 155, 254, 0.5) 50%, rgba(253, 121, 168, 0.3) 100%)',
-            borderRadius: '2px',
+            height: { xs: '4px', sm: '5px', md: '6px' },
+            background: 'linear-gradient(90deg, rgba(108, 92, 231, 0.5) 0%, rgba(163, 155, 254, 0.8) 25%, rgba(253, 121, 168, 0.6) 50%, rgba(163, 155, 254, 0.8) 75%, rgba(108, 92, 231, 0.5) 100%)',
+            borderRadius: { xs: '3px', sm: '4px', md: '5px' },
             transform: 'translateY(-50%)',
             zIndex: 0,
+            boxShadow: {
+              xs: '0 2px 8px rgba(108, 92, 231, 0.3)',
+              sm: '0 3px 12px rgba(108, 92, 231, 0.4)',
+              md: '0 4px 16px rgba(108, 92, 231, 0.5)'
+            },
+            animation: 'shimmer 3s ease-in-out infinite',
+            '@keyframes shimmer': {
+              '0%, 100%': { opacity: 0.6 },
+              '50%': { opacity: 1 }
+            }
           }
         }}
       >
         {days.map((day, index) => (
           <motion.div
             key={day.id}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
             style={{ zIndex: 1 }}
           >
             <ButtonBase
@@ -145,20 +164,20 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                       height: { xs: 48, sm: 56, md: 72 },
                       bgcolor: selectedDay === day.id ? 'primary.main' : 'background.paper',
                       border: selectedDay === day.id 
-                        ? { xs: '2px solid rgba(255,255,255,0.8)', sm: '2.5px solid rgba(255,255,255,0.8)', md: '3px solid rgba(255,255,255,0.8)' }
-                        : { xs: '2px solid rgba(108, 92, 231, 0.25)', sm: '2.5px solid rgba(108, 92, 231, 0.25)', md: '3px solid rgba(108, 92, 231, 0.25)' },
+                        ? { xs: '3px solid rgba(255,255,255,0.9)', sm: '4px solid rgba(255,255,255,0.9)', md: '5px solid rgba(255,255,255,0.9)' }
+                        : { xs: '3px solid rgba(108, 92, 231, 0.4)', sm: '4px solid rgba(108, 92, 231, 0.4)', md: '5px solid rgba(108, 92, 231, 0.4)' },
                       transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                       fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.8rem' },
                       boxShadow: selectedDay === day.id 
                         ? { 
-                            xs: '0 6px 20px rgba(108, 92, 231, 0.4), 0 3px 10px rgba(108, 92, 231, 0.3), inset 0 1px 0 rgba(255,255,255,0.4)',
-                            sm: '0 8px 30px rgba(108, 92, 231, 0.4), 0 4px 15px rgba(108, 92, 231, 0.3), inset 0 1.5px 0 rgba(255,255,255,0.4)',
-                            md: '0 12px 40px rgba(108, 92, 231, 0.4), 0 6px 20px rgba(108, 92, 231, 0.3), inset 0 2px 0 rgba(255,255,255,0.4)'
+                            xs: '0 8px 25px rgba(108, 92, 231, 0.5), 0 4px 15px rgba(108, 92, 231, 0.4), inset 0 2px 0 rgba(255,255,255,0.6)',
+                            sm: '0 10px 35px rgba(108, 92, 231, 0.5), 0 6px 20px rgba(108, 92, 231, 0.4), inset 0 3px 0 rgba(255,255,255,0.6)',
+                            md: '0 15px 45px rgba(108, 92, 231, 0.5), 0 8px 25px rgba(108, 92, 231, 0.4), inset 0 4px 0 rgba(255,255,255,0.6)'
                           }
                         : { 
-                            xs: '0 3px 10px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8)',
-                            sm: '0 4px 15px rgba(0,0,0,0.12), 0 2px 9px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.8)',
-                            md: '0 6px 20px rgba(0,0,0,0.12), 0 3px 12px rgba(0,0,0,0.08), inset 0 2px 0 rgba(255,255,255,0.8)'
+                            xs: '0 4px 15px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.9)',
+                            sm: '0 6px 20px rgba(0,0,0,0.15), 0 3px 12px rgba(0,0,0,0.1), inset 0 3px 0 rgba(255,255,255,0.9)',
+                            md: '0 8px 25px rgba(0,0,0,0.15), 0 4px 15px rgba(0,0,0,0.1), inset 0 4px 0 rgba(255,255,255,0.9)'
                           },
                       background: selectedDay === day.id 
                         ? 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #667eea 100%)'
@@ -181,24 +200,24 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         inset: 0,
                         borderRadius: '50%',
                         background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%)',
-                        transform: selectedDay === day.id ? 'rotate(0deg)' : 'rotate(-45deg)',
-                        transition: 'transform 0.6s ease-in-out',
+                        opacity: selectedDay === day.id ? 1 : 0,
+                        transition: 'opacity 0.6s ease-in-out',
                         pointerEvents: 'none',
-                        animation: selectedDay === day.id ? 'shimmer 2s ease-in-out infinite' : 'none',
+                        animation: selectedDay === day.id ? 'glow 2s ease-in-out infinite' : 'none',
                       },
-                      '@keyframes shimmer': {
-                        '0%': { transform: 'rotate(0deg)' },
-                        '100%': { transform: 'rotate(360deg)' }
+                      '@keyframes glow': {
+                        '0%, 100%': { opacity: 0.6 },
+                        '50%': { opacity: 1 }
                       }
                     }}
                   >
                     {selectedDay === day.id ? (
                       <motion.div
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
                         transition={{ 
                           type: "spring", 
-                          stiffness: 500, 
+                          stiffness: 400, 
                           damping: 25,
                           delay: 0.1 
                         }}
@@ -221,20 +240,20 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                       <motion.div
                         animate={{ 
                           scale: [1, 1.02, 1],
-                          rotate: [0, 1, 0]
+                          opacity: [0.8, 1, 0.8]
                         }}
                         transition={{ 
-                          duration: 4,
+                          duration: 3,
                           repeat: Infinity,
                           ease: "easeInOut",
                           delay: index * 0.2
                         }}
                         whileHover={{ 
-                          scale: 1.15, 
-                          rotate: 8,
+                          scale: 1.1, 
+                          y: -2,
                           transition: { duration: 0.3, type: "spring", stiffness: 400 }
                         }}
-                        whileTap={{ scale: 0.95 }}
+                        whileTap={{ scale: 0.98 }}
                       >
                         {day.id === 0 ? (
                           <AeroplaneIcon width={48} height={48} color="#6F25D2" />
