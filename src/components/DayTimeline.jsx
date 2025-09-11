@@ -98,7 +98,7 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
               onClick={() => onDaySelect(day.id)}
               sx={{
                 borderRadius: { xs: 3, sm: 4, md: 5 },
-                p: { xs: 0.5, sm: 1, md: 1.5 },
+                p: { xs: 1, sm: 1.5, md: 2 },
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
                 minWidth: { xs: 'auto', sm: 'auto' },
@@ -223,17 +223,17 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         }}
                       >
                         {day.id === 0 ? (
-                          <AeroplaneIcon width={48} height={48} color="white" />
+                          <AeroplaneIcon width={36} height={36} color="white" />
                         ) : day.id === 1 ? (
-                          <BusinessMeetingIcon width={48} height={48} color="white" />
+                          <BusinessMeetingIcon width={36} height={36} color="white" />
                         ) : day.id === 2 ? (
-                          <TruckIcon width={24} height={18} color="white" />
+                          <TruckIcon width={20} height={15} color="white" />
                         ) : day.id === 3 ? (
-                          <LeadershipIcon width={48} height={47} color="white" />
+                          <LeadershipIcon width={36} height={35} color="white" />
                         ) : day.id === 4 ? (
-                          <DepartureIcon width={48} height={48} color="white" />
+                          <DepartureIcon width={36} height={36} color="white" />
                         ) : (
-                          <TruckIcon width={24} height={18} color="white" />
+                          <TruckIcon width={20} height={15} color="white" />
                         )}
                       </motion.div>
                     ) : (
@@ -256,17 +256,17 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         whileTap={{ scale: 0.98 }}
                       >
                         {day.id === 0 ? (
-                          <AeroplaneIcon width={48} height={48} color="#6F25D2" />
+                          <AeroplaneIcon width={36} height={36} color="#6F25D2" />
                         ) : day.id === 1 ? (
-                          <BusinessMeetingIcon width={48} height={48} color="#6F25D2" />
+                          <BusinessMeetingIcon width={36} height={36} color="#6F25D2" />
                         ) : day.id === 2 ? (
-                          <TruckIcon width={24} height={18} color="#6F25D2" />
+                          <TruckIcon width={20} height={15} color="#6F25D2" />
                         ) : day.id === 3 ? (
-                          <LeadershipIcon width={48} height={47} color="#6F25D2" />
+                          <LeadershipIcon width={36} height={35} color="#6F25D2" />
                         ) : day.id === 4 ? (
-                          <DepartureIcon width={48} height={48} color="#6F25D2" />
+                          <DepartureIcon width={36} height={36} color="#6F25D2" />
                         ) : (
-                          <TruckIcon width={24} height={18} color="#6c757d" />
+                          <TruckIcon width={20} height={15} color="#6c757d" />
                         )}
                       </motion.div>
                     )}
