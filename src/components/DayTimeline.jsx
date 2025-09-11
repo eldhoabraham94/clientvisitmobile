@@ -7,10 +7,10 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import TruckIcon from './TruckIcon.jsx';
-import TimelineDay1Icon from './TimelineDay1Icon.jsx';
-import TimelineDay2Icon from './TimelineDay2Icon.jsx';
-import TimelineDay4Icon from './TimelineDay4Icon.jsx';
-import TimelineDay5Icon from './TimelineDay5Icon.jsx';
+import AeroplaneIcon from './AeroplaneIcon.jsx';
+import BusinessMeetingIcon from './BusinessMeetingIcon.jsx';
+import LeadershipIcon from './LeadershipIcon.jsx';
+import DepartureIcon from './DepartureIcon.jsx';
 
 const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
   // Helper function to get responsive icon size
@@ -164,16 +164,32 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         ? 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #667eea 100%)'
                         : 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e3f2fd 100%)',
                       position: 'relative',
+                      overflow: 'hidden',
                       '&::before': {
                         content: '""',
                         position: 'absolute',
                         inset: 0,
                         borderRadius: '50%',
                         background: selectedDay === day.id 
-                          ? 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)'
+                          ? 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)'
                           : 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 50%, rgba(255,255,255,0.2) 100%)',
                         pointerEvents: 'none',
                       },
+                      '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        inset: 0,
+                        borderRadius: '50%',
+                        background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%)',
+                        transform: selectedDay === day.id ? 'rotate(0deg)' : 'rotate(-45deg)',
+                        transition: 'transform 0.6s ease-in-out',
+                        pointerEvents: 'none',
+                        animation: selectedDay === day.id ? 'shimmer 2s ease-in-out infinite' : 'none',
+                      },
+                      '@keyframes shimmer': {
+                        '0%': { transform: 'rotate(0deg)' },
+                        '100%': { transform: 'rotate(360deg)' }
+                      }
                     }}
                   >
                     {selectedDay === day.id ? (
@@ -188,29 +204,52 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         }}
                       >
                         {day.id === 0 ? (
-                          <TimelineDay1Icon width={48} height={48} color="white" />
+                          <AeroplaneIcon width={48} height={48} color="white" />
                         ) : day.id === 1 ? (
-                          <TimelineDay2Icon width={48} height={48} color="white" />
+                          <BusinessMeetingIcon width={48} height={48} color="white" />
+                        ) : day.id === 2 ? (
+                          <TruckIcon width={24} height={18} color="white" />
                         ) : day.id === 3 ? (
-                          <TimelineDay4Icon width={48} height={47} color="white" />
+                          <LeadershipIcon width={48} height={47} color="white" />
                         ) : day.id === 4 ? (
-                          <TimelineDay5Icon width={48} height={48} color="white" />
+                          <DepartureIcon width={48} height={48} color="white" />
                         ) : (
                           <TruckIcon width={24} height={18} color="white" />
                         )}
                       </motion.div>
                     ) : (
-                      day.id === 0 ? (
-                        <TimelineDay1Icon width={48} height={48} color="#6F25D2" />
-                      ) : day.id === 1 ? (
-                        <TimelineDay2Icon width={48} height={48} color="#6F25D2" />
-                      ) : day.id === 3 ? (
-                        <TimelineDay4Icon width={48} height={47} color="#6F25D2" />
-                      ) : day.id === 4 ? (
-                        <TimelineDay5Icon width={48} height={48} color="#6F25D2" />
-                      ) : (
-                        <TruckIcon width={24} height={18} color="#6c757d" />
-                      )
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.02, 1],
+                          rotate: [0, 1, 0]
+                        }}
+                        transition={{ 
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.2
+                        }}
+                        whileHover={{ 
+                          scale: 1.15, 
+                          rotate: 8,
+                          transition: { duration: 0.3, type: "spring", stiffness: 400 }
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {day.id === 0 ? (
+                          <AeroplaneIcon width={48} height={48} color="#6F25D2" />
+                        ) : day.id === 1 ? (
+                          <BusinessMeetingIcon width={48} height={48} color="#6F25D2" />
+                        ) : day.id === 2 ? (
+                          <TruckIcon width={24} height={18} color="#6F25D2" />
+                        ) : day.id === 3 ? (
+                          <LeadershipIcon width={48} height={47} color="#6F25D2" />
+                        ) : day.id === 4 ? (
+                          <DepartureIcon width={48} height={48} color="#6F25D2" />
+                        ) : (
+                          <TruckIcon width={24} height={18} color="#6c757d" />
+                        )}
+                      </motion.div>
                     )}
                   </Avatar>
                   
