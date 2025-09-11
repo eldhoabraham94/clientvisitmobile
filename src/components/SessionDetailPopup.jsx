@@ -105,7 +105,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
           {/* Content */}
           <DialogContent sx={{ p: 3, maxHeight: '70vh', overflow: 'auto' }}>
             {/* Basic Info */}
-            <Box sx={{ mb: 3, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+            <Box sx={{ mb: 3, pt: 2, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
               <Chip
                 icon={<AccessTimeIcon />}
                 label={sessionData.time}
