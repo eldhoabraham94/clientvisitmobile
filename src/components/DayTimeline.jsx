@@ -160,8 +160,8 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                   
                   <Avatar
                     sx={{
-                      width: { xs: 48, sm: 56, md: 72 },
-                      height: { xs: 48, sm: 56, md: 72 },
+                      width: { xs: 40, sm: 48, md: 60 },
+                      height: { xs: 40, sm: 48, md: 60 },
                       bgcolor: selectedDay === day.id ? 'primary.main' : 'background.paper',
                       border: selectedDay === day.id 
                         ? { xs: '3px solid rgba(255,255,255,0.9)', sm: '4px solid rgba(255,255,255,0.9)', md: '5px solid rgba(255,255,255,0.9)' }
@@ -223,17 +223,17 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         }}
                       >
                         {day.id === 0 ? (
-                          <AeroplaneIcon width={36} height={36} color="white" />
+                          <AeroplaneIcon width={28} height={28} color="white" />
                         ) : day.id === 1 ? (
-                          <BusinessMeetingIcon width={36} height={36} color="white" />
+                          <BusinessMeetingIcon width={28} height={28} color="white" />
                         ) : day.id === 2 ? (
-                          <TruckIcon width={20} height={15} color="white" />
+                          <TruckIcon width={16} height={12} color="white" />
                         ) : day.id === 3 ? (
-                          <LeadershipIcon width={36} height={35} color="white" />
+                          <LeadershipIcon width={28} height={27} color="white" />
                         ) : day.id === 4 ? (
-                          <DepartureIcon width={36} height={36} color="white" />
+                          <DepartureIcon width={28} height={28} color="white" />
                         ) : (
-                          <TruckIcon width={20} height={15} color="white" />
+                          <TruckIcon width={16} height={12} color="white" />
                         )}
                       </motion.div>
                     ) : (
@@ -256,17 +256,17 @@ const DayTimeline = ({ days, selectedDay, onDaySelect }) => {
                         whileTap={{ scale: 0.98 }}
                       >
                         {day.id === 0 ? (
-                          <AeroplaneIcon width={36} height={36} color="#6F25D2" />
+                          <AeroplaneIcon width={28} height={28} color="#6F25D2" />
                         ) : day.id === 1 ? (
-                          <BusinessMeetingIcon width={36} height={36} color="#6F25D2" />
+                          <BusinessMeetingIcon width={28} height={28} color="#6F25D2" />
                         ) : day.id === 2 ? (
-                          <TruckIcon width={20} height={15} color="#6F25D2" />
+                          <TruckIcon width={16} height={12} color="#6F25D2" />
                         ) : day.id === 3 ? (
-                          <LeadershipIcon width={36} height={35} color="#6F25D2" />
+                          <LeadershipIcon width={28} height={27} color="#6F25D2" />
                         ) : day.id === 4 ? (
-                          <DepartureIcon width={36} height={36} color="#6F25D2" />
+                          <DepartureIcon width={28} height={28} color="#6F25D2" />
                         ) : (
-                          <TruckIcon width={20} height={15} color="#6c757d" />
+                          <TruckIcon width={16} height={12} color="#6c757d" />
                         )}
                       </motion.div>
                     )}
