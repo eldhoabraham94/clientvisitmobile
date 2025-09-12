@@ -144,7 +144,7 @@ const EventsView = ({ dayData, dayInfo }) => {
             },
             '@keyframes arcSlide': {
               '0%': {
-                left: '-50%',
+                left: '-100%',
               },
               '100%': {
                 left: '0%',
