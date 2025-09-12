@@ -131,10 +131,10 @@ const EventsView = ({ dayData, dayInfo }) => {
             '&::after': {
               content: '""',
               position: 'absolute',
-              top: '-45px',
+              top: '-48px',
               left: '-100%',
               right: 0,
-              height: '200px',
+              height: '213px',
               background: '#00bfff',
               animation: 'arcSlide 2s ease-out 0.5s forwards',
               zIndex: 2,
