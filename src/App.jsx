@@ -12,10 +12,13 @@ import {
 import {
   Menu as MenuIcon,
   MoreVert as MoreVertIcon,
+  Flight as FlightIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import DayTimeline from './components/DayTimeline.jsx';
 import EventsView from './components/EventsView.jsx';
+import TataLogo from './components/TataLogo.jsx';
+import PostNordLogo from './components/PostNordLogo.jsx';
 import useTimelineData from './hooks/useTimelineData.js';
 
 function App() {
@@ -101,9 +104,8 @@ function App() {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, color: '#005d92' }}
           >
             <MenuIcon />
           </IconButton>
@@ -122,16 +124,39 @@ function App() {
               letterSpacing: '0.5px',
             }}
           >
-            5-Day Visit Timeline
+            <Box sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              gap: 2, 
+              width: '100%'
+            }}>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -2,
+                  transition: { duration: 0.4, type: "spring", stiffness: 300 }
+                }}
+              >
+                <PostNordLogo width={140} height={28} color="#00A0D6" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -2,
+                  transition: { duration: 0.4, type: "spring", stiffness: 300 }
+                }}
+              >
+                <TataLogo width={200} height={48} color="#000000" />
+              </motion.div>
+            </Box>
           </Typography>
-          <IconButton
-            size="large"
-            edge="end"
-            color="inherit"
-            aria-label="more"
-          >
-            <MoreVertIcon />
-          </IconButton>
         </Toolbar>
       </AppBar>
 

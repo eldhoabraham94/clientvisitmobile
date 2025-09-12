@@ -80,7 +80,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
           {/* Header */}
           <DialogTitle
             sx={{
-              background: 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%)',
+              background: 'linear-gradient(135deg, #00bfff 0%, #00A0D6 25%, #0277bd 50%, #1e3a8a 75%, #1a237e 100%)',
               color: 'white',
               position: 'relative',
               pb: 2,
@@ -110,19 +110,19 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
                 icon={<AccessTimeIcon />}
                 label={sessionData.time}
                 variant="outlined"
-                sx={{ borderColor: '#6c5ce7', color: '#6c5ce7' }}
+                sx={{ borderColor: '#00A0D6', color: '#00A0D6' }}
               />
               <Chip
                 icon={<LocationOnIcon />}
                 label={sessionData.location}
                 variant="outlined"
-                sx={{ borderColor: '#6c5ce7', color: '#6c5ce7' }}
+                sx={{ borderColor: '#00A0D6', color: '#00A0D6' }}
               />
               <Chip
                 icon={<PeopleIcon />}
                 label={`${sessionData.attendees} attendees`}
                 variant="outlined"
-                sx={{ borderColor: '#6c5ce7', color: '#6c5ce7' }}
+                sx={{ borderColor: '#00A0D6', color: '#00A0D6' }}
               />
             </Box>
 
@@ -130,7 +130,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
 
             {/* Description */}
             <Box sx={{ mb: 3 }}>
-              <Typography variant="h6" gutterBottom sx={{ color: '#6c5ce7', fontWeight: 600 }}>
+              <Typography variant="h6" gutterBottom sx={{ color: '#1a237e', fontWeight: 600 }}>
                 Description
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
@@ -140,7 +140,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
 
             {/* Agenda */}
             <Box sx={{ mb: 3 }}>
-              <Typography variant="h6" gutterBottom sx={{ color: '#6c5ce7', fontWeight: 600 }}>
+              <Typography variant="h6" gutterBottom sx={{ color: '#1a237e', fontWeight: 600 }}>
                 Meeting Agenda
               </Typography>
               <List dense sx={{ pl: 0 }}>
@@ -152,7 +152,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
                           width: 8,
                           height: 8,
                           borderRadius: '50%',
-                          bgcolor: '#6c5ce7',
+                          bgcolor: '#00A0D6',
                           mr: 2,
                           flexShrink: 0
                         }}
@@ -167,7 +167,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
             {/* Meeting Minutes */}
             {sessionData.status === 'Completed' && (
               <Box>
-                <Typography variant="h6" gutterBottom sx={{ color: '#6c5ce7', fontWeight: 600 }}>
+                <Typography variant="h6" gutterBottom sx={{ color: '#1a237e', fontWeight: 600 }}>
                   Meeting Minutes
                 </Typography>
                 <List dense sx={{ pl: 0 }}>
@@ -179,7 +179,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
                             width: 6,
                             height: 6,
                             borderRadius: '50%',
-                            bgcolor: '#a29bfe',
+                            bgcolor: '#0277bd',
                             mt: 0.7,
                             mr: 2,
                             flexShrink: 0
@@ -200,7 +200,7 @@ const SessionDetailPopup = ({ open, onClose, sessionData, dayInfo }) => {
               onClick={onClose} 
               variant="contained"
               sx={{
-                background: 'linear-gradient(135deg, #6c5ce7, #a29bfe)',
+                background: 'linear-gradient(135deg, #00bfff 0%, #00A0D6 25%, #0277bd 50%, #1e3a8a 75%, #1a237e 100%)',
                 borderRadius: 2,
                 px: 4,
                 py: 1,

@@ -366,21 +366,28 @@ const EventsView = ({ dayData, dayInfo }) => {
                       transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
                       style={{ flex: 1, position: 'relative' }}
                     >
-                      <LinearProgress
-                        variant="determinate"
-                        value={timeBasedProgress}
-                        sx={{
-                          height: 12,
-                          borderRadius: 6,
-                          backgroundColor: '#E8EAF6',
-                          position: 'relative',
-                          overflow: 'hidden',
-                          boxShadow: 'none',
-                          border: 'none',
-                          '& .MuiLinearProgress-bar': {
+                      <motion.div
+                        initial={{ width: '0%' }}
+                        animate={{ width: '100%' }}
+                        transition={{ duration: 1.5, delay: index * 0.1 + 0.8 }}
+                        style={{ position: 'relative', width: '100%' }}
+                      >
+                        <LinearProgress
+                          variant="determinate"
+                          value={100}
+                          sx={{
+                            height: 12,
                             borderRadius: 6,
-                            backgroundColor: '#22BDF2',
-                            transition: 'transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                            backgroundColor: '#E8EAF6',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            boxShadow: 'none',
+                            border: 'none',
+                            '& .MuiLinearProgress-bar': {
+                              borderRadius: 6,
+                              background: 'linear-gradient(90deg, #00bfff 0%, #00A0D6 25%, #0277bd 50%, #1e3a8a 75%, #1a237e 100%)',
+                              width: `${timeBasedProgress}% !important`,
+                              transition: 'width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                             '&::after': {
                               content: '""',
                               position: 'absolute',
@@ -407,13 +414,14 @@ const EventsView = ({ dayData, dayInfo }) => {
                           }
                         }}
                       />
+                      </motion.div>
                       
                       {/* Simple Moving Truck Icon */}
                       <motion.div
                         initial={{ left: '4%' }}
                         animate={{ left: `${Math.min(92, Math.max(4, timeBasedProgress))}%` }}
                         transition={{ 
-                          duration: 2.0, 
+                          duration: 6.0, 
                           delay: index * 0.1 + 0.8,
                           type: "spring",
                           stiffness: 70,
