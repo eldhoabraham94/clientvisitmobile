@@ -141,7 +141,7 @@ function App() {
                   transition: { duration: 0.4, type: "spring", stiffness: 300 }
                 }}
               >
-                <PostNordLogo width={140} height={28} color="#00A0D6" />
+                <PostNordLogo width={100} height={20} color="#00A0D6" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
@@ -153,7 +153,7 @@ function App() {
                   transition: { duration: 0.4, type: "spring", stiffness: 300 }
                 }}
               >
-                <TataLogo width={200} height={48} color="#000000" />
+                <TataLogo width={140} height={34} color="#000000" />
               </motion.div>
             </Box>
           </Typography>
