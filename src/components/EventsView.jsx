@@ -118,9 +118,49 @@ const EventsView = ({ dayData, dayInfo }) => {
             overflow: 'hidden',
             borderRadius: 3,
             boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: '#1a237e',
+              zIndex: 1,
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              top: '-45px',
+              left: '-100%',
+              right: 0,
+              height: '200px',
+              background: '#00bfff',
+              animation: 'arcSlide 2s ease-out 0.5s forwards',
+              zIndex: 2,
+              borderTopRightRadius: '100px',
+              borderBottomRightRadius: '100px',
+              width: '85%',
+            },
+            '@keyframes arcSlide': {
+              '0%': {
+                left: '-50%',
+              },
+              '100%': {
+                left: '0%',
+              },
+            },
           }}
         >
-          <CardContent sx={{ py: 2, px: 2.5, display: 'flex', alignItems: 'center', gap: 2 }}>
+          <CardContent sx={{ 
+            py: 2, 
+            px: 2.5, 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: 2,
+            position: 'relative',
+            zIndex: 3,
+          }}>
             {/* Truck Illustration */}
             <Box
               sx={{
@@ -138,7 +178,6 @@ const EventsView = ({ dayData, dayInfo }) => {
                   width: 110,
                   height: 60,
                   borderRadius: 2,
-                  bgcolor: 'rgba(34, 189, 242, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -191,12 +230,13 @@ const EventsView = ({ dayData, dayInfo }) => {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  opacity: 0.7, 
+                  opacity: 0.9, 
                   mb: 0.5,
                   fontSize: '1rem',
                   fontWeight: 500,
                   letterSpacing: '0.5px',
-                  color: '#8B5CF6'
+                  color: '#ffffff',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.3)',
                 }}
               >
                 DAY {dayInfo.id + 1}
@@ -207,7 +247,8 @@ const EventsView = ({ dayData, dayInfo }) => {
                   fontWeight: 600, 
                   fontSize: '1.5rem',
                   lineHeight: 1.2,
-                  color: '#2d3436'
+                  color: '#ffffff',
+                  textShadow: '0 1px 3px rgba(0,0,0,0.4)',
                 }}
               >
                 {dayData.title}
